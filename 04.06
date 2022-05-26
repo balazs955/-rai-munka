@@ -1,0 +1,80 @@
+from ast import If
+
+
+file = open("orvosi_nobeldijak.txt", "r")
+
+
+class nobeldijak:
+    ev: int
+    nev: str
+    szuleteshalalozas: str
+    orszagkod: int
+    
+    def __init__(self, sor: str) -> None:
+        adatok =sor.split(";")
+        self.ev = int(adatok[0])
+        self.nev = adatok[1]
+        self.szuleteshalalozas = adatok[2]
+        self.orszagkod = adatok[3]
+        
+for sor in file:
+    print(sor)
+    
+    
+    
+    
+#1. hány nobel dijas van?
+file.seek(0,0)
+nobeldijasok = 0
+file.readline()
+for sor in file:
+    print(sor)
+    nobeldijasok = nobeldijasok + 1
+print(nobeldijasok)
+
+
+#2.hany magyar nobeldijas van 
+file.seek(0,0)
+file.readline()
+magyarok = 0
+for sor in file:
+    magyar = nobeldijak(sor.strip())
+    if magyar.orszagkod == "H":
+        magyarok = magyarok + 1
+        
+print(magyarok, "magyar nobeldíjas van")
+
+#3.mikor kaptak az elso nobeldijat
+file.seek(0,0)
+file.readline()
+elsoNobeldij = 2022
+for sor in file:
+    egyember = nobeldijak(sor.strip())
+    if (egyember.ev > elsoNobeldij):
+        elsoNobeldij = egyember.nev
+        
+print(elsoNobeldij)
+
+#4.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#5
+file.seek(0,0)
+file.readline()
+for sor in file:
+    egyember = nobeldijak(sor.strip())
+    evek = egyember.szuleteshalalozas.split(";")
+    if (evek[1] != ""):
+        print(egyember.nev, "!" ,  int(evek[1])-int(evek[0]))

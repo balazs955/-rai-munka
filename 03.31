@@ -1,0 +1,28 @@
+class Eredmeny:
+    nev: str
+    rajtszam: str
+    kategoria: str
+    ido: str
+    teljesitmenyszazalek: int
+    def __init_(self, sor: str) -> None:
+        adatok = sor.split(';')
+        self.nev = adatok[0]
+        self.rajtszam = int(adatok[1])
+        self.kategoriaj = adatok[2]
+        self.ido = adatok[3]
+        self.teljesitmenyszazalek = int(adatok[4])
+file = open("ub2017egyeni.txt", "r")
+file.readline()
+for sor in file:
+    print(sor)
+    egyAdat = Eredmeny(sor)
+    print("Neve: ", egyAdat.nev , "ideje: ", egyAdat.ido)
+    
+    if egyAdat.kategoria == "Noi":
+        noiDb = noiDb + 1
+        print(noiDb)
+    
+    minszazalek = 100
+    
+if egyAdat.tavSzazalek < minszazalek:
+    minszazalek = egyAdat.tavSzazalek

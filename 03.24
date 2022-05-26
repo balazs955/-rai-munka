@@ -1,0 +1,14 @@
+class kutya:
+    nev: str
+    Fajta: str
+    Szulido: int
+    
+    def __init__(self, neve: str, fajtaja: str, szulideje: int) -> None:
+        self.nev = "bodri"
+        self.fajta = fajtaja
+        self.Szulido = szulideje
+        
+        
+enkutyam = kutya("Bodri", "puli",2020)
+print(enkutyam.nev)
+print((2022-enkutyam.Szulido))

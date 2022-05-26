@@ -1,0 +1,27 @@
+file = open("ub2017egyeni.txt", "r", encoding="utf_8")
+file.readline()
+lista = []
+
+
+for sor in file:
+    adat = sor.strip().split(";")
+    lista.append(adat)
+print(lista)
+
+count = 0
+for i in lista:
+    if  i[1] == "1":
+        count += 1
+        
+print(count)
+
+count2 = 0
+nev = ("év:")
+
+for i in lista:
+    if nev in i[1]:
+        count2 += 1
+print(count2)
+
+count3 = 0
+

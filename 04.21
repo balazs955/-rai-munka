@@ -1,0 +1,34 @@
+class eredmeny:
+    fordulo: str
+    hazaigol : str
+    vendeggol: str
+    hazaifelidogol: str
+    vendegfelidogol: str
+    hazaicsapat: str
+    vendegcsapat: int
+    
+    
+    
+    def __init__(self, sor: str) -> None:
+        adatok = sor.split(" ")
+        self.fordulo = int(adatok[0])
+        self.hazaigol = int(adatok[0])
+        self.vendeggol = int(adatok[0])
+        self.hazaifelidogol = int(adatok[0])
+        self.vendegfelidogol = int(adatok[0])
+        self.hazaicsapat = int(adatok[0])
+        self.vendegcsapat = int(adatok[0])
+     
+    file = open("meccs.txt" , "r" , encoding="utf-8")   
+    file.readline()
+    
+    lista = []
+    for i in file:
+        lista.append(i)
+        print(lista)
+    print(len(lista))
+    
+    forduloha = int(input("add meg a forduló számot"))
+    for adat in lista:
+        if forduloha == adat.fordulo:
+            print(adat.hazaicsapat)
